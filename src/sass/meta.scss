@@ -1,0 +1,13 @@
+section.meta {
+  margin: 0 $margin-sides;
+  dl {
+    margin: 0;
+    dt {
+      font-weight: bold;
+    }
+    dd {
+      margin: $margin-sides/2 0;
+      padding: 0;
+    }
+  }
+}

@@ -1,0 +1,21 @@
+div.body-and-meta {
+  display: flex;
+  flex-wrap: wrap;
+
+  section.body {
+    flex: 1 100%;
+  }
+
+  section.meta {
+    flex: 1 100%;
+  }
+
+  @media screen and (min-width: 960px) {
+    section.body {
+      flex: 5 1 0px;
+    }
+    section.meta {
+      flex: 1 1 0px;
+    }
+  }
+}

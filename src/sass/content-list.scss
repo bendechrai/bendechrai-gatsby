@@ -1,0 +1,39 @@
+ul.content-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+  gap: 15px 10px;
+
+  li {
+    display: flex;
+    flex-direction: row;
+    a {
+      background-color: $button-background;
+      &:hover {
+        background-color: $button-background-hover;
+      }
+      padding: 1em 0;
+      text-decoration: none;
+      width: 100%;
+      .content {
+        margin: 0 $margin-sides;
+        .image {
+          float: right;
+          width: 45%;
+          max-width: 300px;
+          margin: 0 0 $margin-sides / 2 $margin-sides;
+          img {
+            width: 100%;
+          }
+        }
+        .synopsis {
+          margin: 0;
+          line-height: calc(1vw + 1em);
+        }
+      }
+    }
+  }
+}

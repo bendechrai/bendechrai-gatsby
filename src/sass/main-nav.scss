@@ -1,0 +1,48 @@
+nav.main-menu {
+  position: fixed;
+  top: calc(100% - 2em);
+  left: 0;
+  right: 0;
+  background-color: #000000ee;
+  transition: all 0.5s ease;
+  padding-bottom: 1em;
+  .burger {
+    display: block;
+    text-align: center;
+    line-height: 2em;
+    outline: none;
+    cursor: pointer;
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 $margin-sides;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0.5em;
+    @media screen and (min-width: 450px) {
+      grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+    }
+    li {
+      display: block;
+      a {
+        font-size: 80%;
+        text-decoration: none;
+        border-radius: 3px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0.5em 1em;
+        svg {
+          min-width: 2em;
+          min-height: 2em;
+          margin-bottom: 1em;
+        }
+        &:hover {
+          background-color: $button-background;
+          color: $button-text;
+        }
+      }
+    }
+  }
+}

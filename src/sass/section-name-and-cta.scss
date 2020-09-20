@@ -1,0 +1,16 @@
+div.section-and-cta {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(480px, auto));
+  align-items: center;
+
+  section.section-name {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: $margin-sides;
+    margin-bottom: 0;
+  }
+
+  section.cta {
+    margin: 0 $margin-sides;
+  }
+}

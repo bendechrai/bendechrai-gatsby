@@ -1,0 +1,18 @@
+section.body {
+  margin: 0;
+  div.content {
+    margin: 0 $margin-sides $margin-sides $margin-sides;
+  }
+
+  section {
+    margin-top: 2em;
+    & > h2,
+    & > h3,
+    & > h4,
+    & > h5,
+    & > h6 {
+      margin-left: $margin-sides;
+      margin-right: $margin-sides;
+    }
+  }
+}

@@ -1,0 +1,53 @@
+body {
+  margin: 0;
+  padding: 0 0 2em 0;
+  color: $text-color;
+}
+
+div.outer-wrap {
+  max-width: $max-width;
+  margin: 0 auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  margin: 0 0 $margin-sides 0;
+  padding: 0;
+}
+
+p {
+  margin: 0 0 $margin-sides 0;
+  padding: 0;
+  &:last-of-type {
+    margin: 0;
+  }
+}
+
+a {
+  color: $text-color;
+}
+
+a.tag {
+  margin: 0 0.1em;
+  border-radius: 4px;
+  padding: 0 0.5em;
+  border-radius: 3px;
+}
+
+.button {
+  color: $button-text;
+  text-decoration: none;
+  border: 1px solid $button-border;
+  background-color: $button-background;
+  &:hover {
+    color: $button-text;
+    background-color: $button-background-hover;
+  }
+}
