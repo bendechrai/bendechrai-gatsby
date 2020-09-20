@@ -29,9 +29,10 @@ const Menu = () => {
     menuHandle.blur()
   }, [active])
 
-  window.addEventListener("resize", () => {
-    setActive(false)
-  })
+  if (typeof window !== "undefined")
+    window.addEventListener("resize", () => {
+      setActive(false)
+    })
 
   return (
     <nav className="main-menu">

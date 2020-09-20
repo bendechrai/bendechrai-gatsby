@@ -67,7 +67,7 @@ const Layout = ({
     setBackgroundSize()
   }, [siteData.bgImage, builder, setBackgroundSize])
 
-  if (window)
+  if (typeof window !== "undefined")
     window.addEventListener("resize", () => {
       if (bgImageAspectRatio) setBackgroundSize()
     })
