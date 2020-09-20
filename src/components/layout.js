@@ -22,18 +22,12 @@ const Layout = ({
   const siteData = useSiteData()
   const builder = useImageUrlBuilder()
   const [bgImageAspectRatio, setBgImageAspectRatio] = useState(null)
+  const [windowWidth, setWindowWidth] = useState(0)
+  const [windowHeight, setWindowHeight] = useState(0)
 
   const setBackgroundSize = useCallback(() => {
     // Get window aspect ratios
-    const vw = Math.max(
-      document.documentElement.clientWidth || 0,
-      window.innerWidth || 0
-    )
-    const vh = Math.max(
-      document.documentElement.clientHeight || 0,
-      window.innerHeight || 0
-    )
-    const windowAspectRatio = vw / vh
+    const windowAspectRatio = windowWidth / windowHeight
 
     // Set background image size to max width or height depending on aspect ratio comparison
     if (bgImageAspectRatio < windowAspectRatio) {
@@ -41,9 +35,23 @@ const Layout = ({
     } else {
       document.querySelector("body").style.backgroundSize = "auto 100%"
     }
-  }, [bgImageAspectRatio])
+  }, [bgImageAspectRatio, windowWidth, windowHeight])
 
   useEffect(() => {
+    // Get window dimensions
+    setWindowWidth(
+      Math.max(
+        document.documentElement.clientWidth || 0,
+        window.innerWidth || 0
+      )
+    )
+    setWindowHeight(
+      Math.max(
+        document.documentElement.clientHeight || 0,
+        window.innerHeight || 0
+      )
+    )
+
     // Load background image
     const bgImageUrl = builder.image(siteData.bgImage).width(300).url()
     const bgImage = new Image()
