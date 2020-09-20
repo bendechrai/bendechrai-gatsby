@@ -53,7 +53,7 @@ const Layout = ({
     )
 
     // Load background image
-    const bgImageUrl = builder.image(siteData.bgImage).width(300).url()
+    const bgImageUrl = builder.image(siteData.bgImage).width(1280).url()
     const bgImage = new Image()
     bgImage.src = bgImageUrl
     setBgImageAspectRatio(bgImage.width / bgImage.height)
@@ -67,9 +67,10 @@ const Layout = ({
     setBackgroundSize()
   }, [siteData.bgImage, builder, setBackgroundSize])
 
-  window.addEventListener("resize", () => {
-    if (bgImageAspectRatio) setBackgroundSize()
-  })
+  if (window)
+    window.addEventListener("resize", () => {
+      if (bgImageAspectRatio) setBackgroundSize()
+    })
 
   return (
     <>
